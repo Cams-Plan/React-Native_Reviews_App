@@ -4,12 +4,12 @@ import { Home, ReviewDetails } from "../screens"
 
 // const Stack = createStackNavigator()
 
-export const Screens = {
-    Home: {
-        naem : Home
-    },
-    ReviewDetails: {
-        screen: ReviewDetails
-    }
-}
+// export const Screens = {
+//     Home: {
+//         naem : Home
+//     },
+//     ReviewDetails: {
+//         screen: ReviewDetails
+//     }
+// }
 
