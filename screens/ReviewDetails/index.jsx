@@ -5,7 +5,7 @@ export const ReviewDetails = ({ navigation }) => {
   return (
     <View>
         <Text>ReviewDetails</Text>
-        <Button title="Review Nav" onPress={()=> navigation.navigate('Home') } />
+        <Button title="Pop Back Out of Stack" onPress={()=> navigation.pop() } />
     </View>
   )
 }
