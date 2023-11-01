@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { globalStyles } from '../../assets/styles/global';
+import Card from '../../components/Card';
 
 const ReviewDetails = ({ navigation, route }) => {
 
@@ -8,11 +9,11 @@ const ReviewDetails = ({ navigation, route }) => {
 
   return (
     <View style={globalStyles.container} >
-        <Text style={globalStyles.headerText} >{title}</Text>
-        <Text style={styles.ReviewsRating} >{`Rating: ${rating}/5`}</Text>
-        <Text style={styles.ReviewsBody} >{body}</Text>
-
-        {/* <Button title="Pop Back Out of Stack" onPress={()=> navigation.pop() } /> */}
+        <Card>
+            <Text style={globalStyles.headerText} >{title}</Text>
+            <Text style={styles.ReviewsRating} >{`Rating: ${rating}/5`}</Text>
+            <Text style={styles.ReviewsBody} >{body}</Text>
+        </Card>
     </View>
   )
 }

@@ -3,12 +3,11 @@ import { StyleSheet } from "react-native"
 
 export const globalStyles = StyleSheet.create({
     container: {
-        padding: 20
+        padding: 20,
     },
     text: {
         fontFamily: 'Nunito-SemiBold',
         fontSize: 20,
-        marginTop: 8
     },
     headerText: {
         fontFamily: 'Nunito-SemiBold',
