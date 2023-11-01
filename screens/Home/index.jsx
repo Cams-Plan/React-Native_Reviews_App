@@ -9,7 +9,7 @@ const Home = ({ navigation}) => {
         {
           title: 'Zelda, Breathe of Fresh Air', 
           rating: 5, 
-          body: "This game was indeed a 'Breathe of Fresh Air'. The movement is crisp, the content is long but engaging, and more importantly, the game is FUN.\n\nEven when sections become a little long-winded, the rewards that follow the hard graft make it all worthwhile.\n\n A MUST BUY!", 
+          body: "This game was indeed a 'Breathe of Fresh Air'. The movement is crisp, the content is long but engaging, and more importantly, the game is FUN.\n\nEven when sections become a little long-winded, the rewards that follow the hard graft make it all worthwhile. A MUST BUY!", 
           key: '1'
         },
         {
@@ -33,13 +33,13 @@ const Home = ({ navigation}) => {
         {
           title: 'Fate: You Can\'t Stay The Night', 
           rating: 4, 
-          body: "I'm going to jump the gun a little bit here and say that this game is CULT CLASSIC MATERIAL.\n\n This game is in its infancy but the combat, storytelling, and graphics are top-notch quality. The gripping story will have you immersed in every characters journey, which is perfect with the variety of character routes available.\n\nI for one cannot wait for the multiplayer integration next month! I highly suggest picking this game up now and perfecting your skills early in time for the multiplayer release.", 
+          body: "I'm going to jump the gun a little bit here and say that this game is CULT CLASSIC MATERIAL.\n\nThis game is in its infancy but the combat, storytelling, and graphics are top-notch quality. The gripping story will have you immersed in every characters journey, which is perfect with the variety of character routes available.\n\nI for one cannot wait for the multiplayer integration next month! I highly suggest picking this game up now and perfecting your skills early in time for the multiplayer release.", 
           key: '5'
         },
         {
           title: 'The Credibles', 
           rating: 1,
-          body: "I had high hopes for this game, but it missed the mark on many levels. Particularly the story and combat, which is basically the main premise of the game.\n\nThe story missed key elements of the film. Instead opting to focus on insignificant story elements that fan really could've done without.\n\nThe combat is way too simple, to the point that It drew me further away from the already insignificant story section.\n\n This game really isn't worth picking up, even as a 'pass the time' game.\nSave your money.", 
+          body: "I had high hopes for this game, but it missed the mark on so many levels. Particularly the story and combat, which is basically the main premise of the game.\n\nThe story missed key elements of the film. Instead opting to focus on insignificant story elements that fans really could've done without.\n\nThe combat is way too simple, to the point that it exacerbated the insignificance of the section I was on.\n\nThis game really isn't worth picking up, even as a 'pass the time' game.\nSave your money.", 
           key: '6'
         },
     ]

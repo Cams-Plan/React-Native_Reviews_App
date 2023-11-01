@@ -3,22 +3,34 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer"
 import 'react-native-gesture-handler'
 
-import { View, Text } from 'react-native'
+import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import { Home, ReviewDetails, About } from './screens';
+import { globalStyles } from "./assets/styles/global";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
+function LogoTitle({title}) {
+    return (
+        <View style={styles.header} >
+            <Image
+                style={{ width: 37, height: 37, marginRight: 12}}
+                source={require('./assets/images/gameControl.png')}
+            />
+            <Text style={globalStyles.headerText}>{title}</Text>
+        </View>
+    );
+  }
+
 function DrawerGroup() {
     return (
       <Drawer.Navigator
-      screenOptions={({ route })=> ({
+        screenOptions={({ route })=> ({
         title: route.name == "Home" ? "Gamezone" : route.name,
-        headerTitleAlign: "center"
-      })}>
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="About" component={About} />
+        headerTitleAlign: "center"})}>
+        <Drawer.Screen name="Home" component={Home} options={{headerTitle: (title)=> {return (<LogoTitle title={title.children} />)}}}/>
+        <Drawer.Screen name="About" component={About} options={{headerTitle: (title)=> {return (<LogoTitle title={`${title.children} GameZone`} />)}}}/>
       </Drawer.Navigator>
     );
   }
@@ -40,3 +52,10 @@ export default function Navigation() {
     </NavigationContainer>
   )
 }
+
+const styles = StyleSheet.create({
+    header: {
+        flexDirection: "row",
+        alignItems: "center"
+    }
+})

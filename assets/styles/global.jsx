@@ -12,7 +12,6 @@ export const globalStyles = StyleSheet.create({
     headerText: {
         fontFamily: 'Nunito-SemiBold',
         fontSize: 23,
-        marginBottom: 8,
         textAlign: "center"
     },
 })

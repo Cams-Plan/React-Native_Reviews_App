@@ -12,13 +12,12 @@ const ReviewDetails = ({ navigation, route }) => {
   return (
     <View style={globalStyles.container} >
         <Card>
-            <Text style={globalStyles.headerText} >{title}</Text>
+            <Text style={{...globalStyles.headerText, textAlign: "left"}} >{title}</Text>
+            <Text style={styles.ReviewsBody} >{body}</Text>
             <View style={styles.ratingContainer} >
                 <Text style={styles.ReviewsRating} >{`Gamezone Rating:`}</Text>
                 {starComparisonList.map((item, index)=> item <=rating ? <MaterialIcons name="star" size={24} color="#c9743add" key={index}/> : <MaterialIcons name="star-outline" size={24} color="#c9743add" key={index}/>)}
             </View>
-            
-            <Text style={styles.ReviewsBody} >{body}</Text>
         </Card>
     </View>
   )
@@ -33,14 +32,19 @@ const styles = StyleSheet.create({
         fontStyle: "italic",
     },
     ReviewsBody: {
-        textAlign: "center",
+        marginTop: 5,
+        // textAlign: "center",
         fontFamily: 'Nunito-Regular',
         fontSize: 20,
     },
     ratingContainer: {
-        flexDirection: "row",
+        borderTopWidth: 1.5,
+        borderTopColor: "#00000015" ,
+        paddingTop: 10,
         justifyContent: "center",
-        marginBottom: 20,
+        flexDirection: "row",
+        marginTop: 20,
+        marginBottom: 5,
         alignItems: "center"
     }
 })
