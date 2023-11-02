@@ -19,7 +19,7 @@ I also take the base formatting provided by the tutorial, and expand it further 
     - __Clone clone the default branch (main)__:
       
         `git clone https://github.com/Cams-Plan/React-Native_Reviews_App.git <DIRECTORY NAME [Optional]>`
-    - __Clone the a specific branch__:
+    - __Clone a specific branch__:
       
         `git clone -b <BRANCH NAME> https://github.com/Cams-Plan/React-Native_Reviews_App.git <DIRECTORY NAME [Optional]>`
 2. Enter your local project directory
