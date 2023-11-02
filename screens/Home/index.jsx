@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View, Modal } from 'react-native';
+import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View, Modal, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { globalStyles } from '../../assets/styles/global';
 import Card from '../../components/Card';
 import { MaterialIcons } from '@expo/vector-icons';
+import ReviewForm from '../ReviewForm';
+
 
 const Home = ({ navigation}) => {
 
@@ -47,23 +49,39 @@ const Home = ({ navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [reviews, setReviews] = useState(reviewsList)
 
+    const addReview = (review) => {
+
+      review.rating > 5 ? review.rating = 5 : null;
+      review.key = reviews.length + 1
+      setReviews((prevReviews)=> {
+        return [review, ...prevReviews]
+      })
+      setModalVisible(!false)
+
+    }
+    
   return (
     
     <View style={globalStyles.container} >
+      
       <Modal 
       visible={modalVisible}
       animationType={'slide'} >
+        <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
         <View style={styles.modalContent} >
           <TouchableOpacity onPress={()=> setModalVisible(!modalVisible)} >
             <MaterialIcons style={styles.closeIcon} name="close" size={24} color="black" />
           </TouchableOpacity>
-          <Text>Hello!!</Text>
+          <ReviewForm addReview={addReview} />
         </View>
+        </TouchableWithoutFeedback>
       </Modal>
+      
       <TouchableOpacity onPress={()=> setModalVisible(true)} >
       <MaterialIcons style={styles.addIcon} name="add-circle-outline" size={32} color="black" />
       </TouchableOpacity>
       <Text style={styles.addIcon}>Add A Review</Text>
+
       <FlatList
       data={reviews}
       renderItem={({ item })=> (

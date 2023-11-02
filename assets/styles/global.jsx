@@ -14,4 +14,13 @@ export const globalStyles = StyleSheet.create({
         fontSize: 23,
         textAlign: "center"
     },
+    input: {
+        borderWidth: 1,
+        borderColor: "#ddd",
+        padding: 10,
+        fontSize: 18,
+        fontFamily: 'Nunito-Regular',
+        borderRadius: 6,
+        marginBottom: 10,
+    }
 })
