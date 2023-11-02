@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View, Modal } from 'react-native';
 import { globalStyles } from '../../assets/styles/global';
 import Card from '../../components/Card';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const Home = ({ navigation}) => {
 
@@ -43,12 +44,26 @@ const Home = ({ navigation}) => {
           key: '6'
         },
     ]
-
+    const [modalVisible, setModalVisible] = useState(false);
     const [reviews, setReviews] = useState(reviewsList)
 
   return (
     
     <View style={globalStyles.container} >
+      <Modal 
+      visible={modalVisible}
+      animationType={'slide'} >
+        <View style={styles.modalContent} >
+          <TouchableOpacity onPress={()=> setModalVisible(!modalVisible)} >
+            <MaterialIcons style={styles.closeIcon} name="close" size={24} color="black" />
+          </TouchableOpacity>
+          <Text>Hello!!</Text>
+        </View>
+      </Modal>
+      <TouchableOpacity onPress={()=> setModalVisible(true)} >
+      <MaterialIcons style={styles.addIcon} name="add-circle-outline" size={32} color="black" />
+      </TouchableOpacity>
+      <Text style={styles.addIcon}>Add A Review</Text>
       <FlatList
       data={reviews}
       renderItem={({ item })=> (
@@ -62,7 +77,18 @@ const Home = ({ navigation}) => {
   )
 }
 const styles = StyleSheet.create({
-
+  modalContent : {
+    padding: 20,
+    flex: 1,
+    
+  },
+  addIcon: {
+    marginBottom: 10,
+    alignSelf: "center",
+  },
+  closeIcon: {
+    alignSelf: "flex-end"
+  }
 })
 
 export default Home
