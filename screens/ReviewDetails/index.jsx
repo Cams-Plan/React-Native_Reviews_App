@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { globalStyles } from '../../assets/styles/global';
-import Card from '../../components/Card';
+import { Card } from '../../components/';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const ReviewDetails = ({ navigation, route }) => {

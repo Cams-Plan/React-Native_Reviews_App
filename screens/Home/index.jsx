@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View, Modal, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { globalStyles } from '../../assets/styles/global';
-import Card from '../../components/Card';
+import { Card } from '../../components';
 import { MaterialIcons } from '@expo/vector-icons';
 import ReviewForm from '../ReviewForm';
 
@@ -56,7 +56,7 @@ const Home = ({ navigation}) => {
       setReviews((prevReviews)=> {
         return [review, ...prevReviews]
       })
-      setModalVisible(!false)
+      setModalVisible(false)
 
     }
     

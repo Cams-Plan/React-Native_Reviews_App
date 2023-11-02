@@ -22,5 +22,10 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'Nunito-Regular',
         borderRadius: 6,
         marginBottom: 10,
-    }
+    },
+    errorText: {
+        fontFamily: 'Nunito-SemiBold',
+        color: 'crimson',
+        marginBottom: 3,
+    },
 })

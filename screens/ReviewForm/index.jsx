@@ -2,6 +2,23 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 import React from 'react'
 import { globalStyles } from '../../assets/styles/global'
 import { Formik } from 'formik'
+import * as yup from "yup"
+import { CustomButton } from "../../components"
+
+const reviewSchema = yup.object({
+  title: yup.string()
+    .required()
+    .min(3),
+  body: yup.string()
+    .required()
+    .min(8),
+  rating: yup.string()
+    .required()
+    .test('is number 1-5', 'Rating Must Be 1-5', (val) => {
+      return parseInt(val) > 0 && parseInt(val) < 6;
+    })
+
+})
 
 export default function ReviewForm({ addReview }) {
   return (
@@ -9,20 +26,7 @@ export default function ReviewForm({ addReview }) {
     <View style={globalStyles.container} >
       <Formik
         initialValues={{title: '', body: '', rating: ''}}
-        validate={values => {
-          const e = {};
-          if (!values.title){
-            e.title = 'Review Title Cannot Be Blank'
-          } else if (!values.body) {
-            e.body = 'Review Body Cannot Be Blank'
-          } else if (values.rating > 5) {
-            e.rating = "Ratings Must Be Between 1 & 5"
-          }
-          else if (!values.rating) {
-            e.rating = "Ratings Cannot Be Blank"
-          }
-          return e
-        }}
+        validationSchema={reviewSchema}
         onSubmit={(values, actions)=> { 
           actions.resetForm();
           addReview(values);
@@ -33,24 +37,29 @@ export default function ReviewForm({ addReview }) {
                 style={globalStyles.input}
                 placeholder='Review title'
                 onChangeText={formikProps.handleChange('title')}
-                value={formikProps.values.title} 
+                value={formikProps.values.title}
+                onBlur={formikProps.handleBlur('title')}
               />
-              
+              <Text style={globalStyles.errorText} >{formikProps.touched.title && formikProps.errors.title }</Text>
               <TextInput 
+                multiline={true}
                 style={globalStyles.input}
                 placeholder='Review body'
                 onChangeText={formikProps.handleChange('body')}
-                value={formikProps.values.body} 
+                value={formikProps.values.body}
+                onBlur={formikProps.handleBlur('body')}
               />
+              <Text style={globalStyles.errorText} >{formikProps.touched.body && formikProps.errors.body}</Text>
               <TextInput 
                 style={globalStyles.input}
                 keyboardType='numeric'
                 placeholder='Rating (1-5)'
                 onChangeText={formikProps.handleChange('rating')}
-                value={formikProps.values.rating} 
+                value={formikProps.values.rating}
+                onBlur={formikProps.handleBlur('rating')}
               />
-              <Text>{formikProps.errors.fields || formikProps.errors.rating || formikProps.errors.title}</Text>
-              <Button title='submit' color='#c9743a' onPress={formikProps.handleSubmit} />
+              <Text style={globalStyles.errorText} >{formikProps.touched.rating && formikProps.errors.rating}</Text>
+              <CustomButton text={'submit'} onPress={formikProps.handleSubmit} />
             </View>
           )}
       </Formik>
