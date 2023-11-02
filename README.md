@@ -3,7 +3,7 @@
 ## Description:
 A simple Frontend Game Review app for practising React-Native in preparation for bigger projects.
 
-This was made with some assistance from the NetNinja React-Native playlist but a lot of syntax and execution was achieved by utilising the React Navigation, Yup, and Formik Documentation since the tutorial had many deprecated resources. Because of this, this project is also a great showcase of my troubleshooting and problem solving skills.
+This was made with some assistance from the NetNinja React-Native playlist but a lot of syntax and execution was achieved by utilising the [React Navigation](https://reactnavigation.org/docs/getting-started), [Yup](https://formik.org/docs/guides/validation#validationschema), and [Formik](https://formik.org/docs/overview) documentation, since the tutorial had many deprecated resources. Because of this, **my project is also a great showcase of my troubleshooting and problem solving skills**.
 
 I also take the base formatting provided by the tutorial, and expand it further in my progression branch.
 
