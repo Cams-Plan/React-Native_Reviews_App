@@ -11,8 +11,8 @@ I also take the base formatting provided by the tutorial, and expand it further 
 
 | Branch Name | Description | Terminal CMD |
 |:--:|:--:|:--:|
-| __main__  | Basic version of the project  | `git switch origin main`  |
-| [__progression__](https://github.com/Cams-Plan/React-Native_Reviews_App/tree/progression) | An extention of the base project with extra features | `git switch origin progression`  |
+| [__main__](https://github.com/Cams-Plan/React-Native_Reviews_App/tree/main)  | Basic version of the project  | `git switch origin main`  |
+| __progression__ | An extention of the base project with extra features | `git switch origin progression`  |
 
 ## How to Run This React-Native Project
 1. Clone the repository
